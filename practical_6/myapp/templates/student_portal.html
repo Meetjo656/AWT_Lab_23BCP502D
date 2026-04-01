@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Student Portal{% endblock %}
+{% block content %}
+<div class='card'>
+  <h2>Welcome, Student</h2>
+  <p>Use the navigation to manage your student profile, attendance, exams, and fees.</p>
+</div>
+<div class='card'>
+  <h3>Quick Links</h3>
+  <ul>
+     <li><a href='{% url  myapp:dashboard %}'>Dashboard</a></li>
+     <li><a href='{% url myapp:attendance %}'>Attendance</a></li>
+     <li><a href='{% url myapp:exam %}'>Exam</a></li>
+     <li><a href='{% url myapp:fees %}'>Fees</a></li>
+  </ul>
+</div>
+{% endblock %}

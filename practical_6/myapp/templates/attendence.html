@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Attendance Management{% endblock %}
+{% block content %}
+<div class='card'>
+    <h2>Mark Attendance</h2>
+    <input type='text' placeholder='Student Name' />
+    <select>
+        <option>Present</option>
+        <option>Absent</option>
+    </select>
+    <button class='btn'>Submit</button>
+</div>
+<div class='card'>
+    <h2>Attendance Records</h2>
+    <table class='table'>
+        <tr><th>Name</th><th>Status</th></tr>
+        <tr><td>John</td><td>Present</td></tr>
+        <tr><td>Jane</td><td>Absent</td></tr>
+    </table>
+</div>
+{% endblock %}

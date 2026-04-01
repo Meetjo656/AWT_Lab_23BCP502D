@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Item Detail{% endblock %}
+{% block content %}
+  <div class='card'>
+    <h2>{{ item.title }}</h2>
+    <p>{{ item.description|linebreaksbr }}</p>
+    <p><strong>Created:</strong> {{ item.created_at|date:'Y-m-d H:i' }}</p>
+    <p><strong>Updated:</strong> {{ item.updated_at|date:'Y-m-d H:i' }}</p>
+    <a class='btn' href='{% url "myapp:item-list" %}'>Back to Items</a>
+    <a class='btn btn-secondary' href='{% url "myapp:item-edit" item.pk %}'>Edit</a>
+  </div>
+{% endblock %}

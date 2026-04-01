@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Items{% endblock %}
+{% block content %}
+  <div class='card'>
+    <div style='display:flex; justify-content:space-between; align-items:center;'>
+      <h2>Items</h2>
+      <a class='btn' href='{% url "myapp:item-add" %}'>Add Item</a>
+    </div>
+    {% if items %}
+      <table class='table'>
+        <thead><tr><th>ID</th><th>Title</th><th>Actions</th></tr></thead>
+        <tbody>
+          {% for item in items %}
+            <tr>
+              <td>{{ item.pk }}</td>
+              <td><a href='{% url "myapp:item-detail" item.pk %}'>{{ item.title }}</a></td>
+              <td>
+                <a class='btn btn-secondary' href='{% url "myapp:item-edit" item.pk %}'>Edit</a>
+                <a class='btn btn-secondary' href='{% url "myapp:item-delete" item.pk %}'>Delete</a>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p>No items found.</p>
+    {% endif %}
+  </div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Fees Status{% endblock %}
+{% block content %}
+<div class='card'>
+  <h2>Fees Due</h2>
+  <p>Next due date: 2026-05-01</p>
+  <p>Total balance: </p>
+  <button class='btn'>Pay Now</button>
+</div>
+<div class='card'>
+  <h2>Payment History</h2>
+  <table class='table'>
+    <tr><th>Date</th><th>Amount</th><th>Status</th></tr>
+    <tr><td>2026-03-01</td><td></td><td>Paid</td></tr>
+    <tr><td>2026-02-01</td><td></td><td>Paid</td></tr>
+  </table>
+</div>
+{% endblock %}
